@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Eventos</h3>
+  <h3>Ultimos Eventos</h3>
 
   <ion-card *ngFor="let user of users">
 
@@ -17,13 +17,13 @@
         <img src="img/marty-avatar.png">
       </ion-avatar>
       <h2>{{user.titulo}}</h2>
-      <p>{{user.data}}</p>
+      <p>{{user.data | date:'dd/MMMM/yyyy'}}</p>
     </ion-item>
   
-    <img src="img/advance-card-bttf.png">
+    <img src="https://www.canilps.com.br/teste/{{user.imagem}}">
   
     <ion-card-content>
-      <p>{{ user.titulo }}</p>
+      <p>{{ user.descricao }}</p>
     </ion-card-content>
   
     <ion-row>

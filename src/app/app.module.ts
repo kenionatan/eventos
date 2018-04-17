@@ -19,7 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, 
+      {
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
+        monthShortNames: ['JAN', 'FEV', 'MAR', 'ABR' ],
+        dayNames: ['Domingo', 'Segunda-feira', 'Terça-feira' ],
+        dayShortNames: ['dom', 'seg', 'ter' ],
+      }
+    ),
+    
     HttpClientModule
   ],
   bootstrap: [IonicApp],
