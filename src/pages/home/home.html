@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,16 +8,22 @@
 </ion-header>
 
 <ion-content padding>
+
+  <ion-searchbar placeholder="Busca" (ionInput)="getTopics($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+
   <h3>Ultimos Eventos</h3>
+
+  <ion-spinner name="circles" *ngIf="users == 0">
+  </ion-spinner>
 
   <ion-card *ngFor="let user of users">
 
     <ion-item>
       <h2>{{user.titulo}}</h2>
-      <h1>{{user.data | date:'dd/MMMM/yyyy'}}</h1>
+      <h1>{{user.data}}</h1>
     </ion-item>
   
-    <img src="https://www.canilps.com.br/teste/{{user.imagem}}">
+    <img src="http://www.kenio.top/api_eventos/{{user.imagem}}">
   
     <ion-card-content>
       <p>{{ user.descricao }}</p>

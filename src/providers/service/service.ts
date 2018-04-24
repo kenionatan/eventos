@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ServiceProvider {
 
-  api:string = "https://www.canilps.com.br/teste/";
+  api:string = "http://www.kenio.top/api_eventos/";
 
   constructor(public http: HttpClient) {
   }
